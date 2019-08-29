@@ -32,13 +32,12 @@ describe('App', () => {
     expect(wrapper.state('orders')).toEqual(expected);
   })
 
-  it.skip('should delete an order when deletePurchase is fired', () => {
+  it('should delete an order when deletePurchase is fired', () => {
+    wrapper.setState({ orders: [mockOrder] })
     let expected = [];
-    let e = {
-      preventDefault: jest.fn()
-    }
+    // let deleteOrder(1) = jest.fn();
+    expect(wrapper.state('orders')).toEqual([mockOrder]);
+    wrapper.instance().deletePurchase(1);
     expect(wrapper.state('orders')).toEqual([]);
-    wrapper.instance().addPurchase(e, mockOrder);
-    expect(wrapper.state('orders')).toEqual(expected);
   })
 })

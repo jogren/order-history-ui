@@ -34,7 +34,6 @@ class App extends Component {
 
   render() {
     const { orders, error } = this.state;
-    console.log(orders)
     return (
       <main className="App">
         <header>
