@@ -1,11 +1,44 @@
 .Order_section {
   display: flex;
   justify-content: space-between;
+  /* align-items: center; */
   background-color: #FFF;
-  margin: 40px 20%;;
+  margin: 40px 10%;
+  box-shadow: 0 0 10px #000000;
+  height: 100px;
+}
+
+.Order_div-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
   height: 70px;
   width: 90px;
+}
+
+.Order_div-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Order_div-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h3 {
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.Order_button {
+  height: 50px;
+  width: 100px;
+  background-color: lightblue;
 }
