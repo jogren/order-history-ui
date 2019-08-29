@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order should keep an up-to-date snapshot of Order 1`] = `
+<section
+  className="Order_section"
+>
+  <div
+    className="Order_div-image"
+  >
+    <img
+      alt="iPhone"
+      src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-xs-max-gold-select-2018?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1550795409154"
+    />
+  </div>
+  <div
+    className="Order_div-content"
+  >
+    <h2>
+      iPhone
+    </h2>
+    <p>
+      The new iPhone18
+    </p>
+  </div>
+  <div
+    className="Order_div-price"
+  >
+    <h3>
+      $
+      200
+    </h3>
+    <button
+      className="Order_button"
+      onClick={[Function]}
+    >
+      Remove from History
+    </button>
+  </div>
+</section>
+`;
