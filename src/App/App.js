@@ -21,7 +21,35 @@ class App extends Component {
 
   addPurchase = (e, formState) => {
     e.preventDefault();
-    this.setState({ orders: [...this.state.orders, formState] })
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(formState),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch('http://localhost:3001/api/v1/purchases', options)
+      .then(res => {
+        if(!res.ok) {
+          throw Error('Error posting order')
+        }
+        return res.json()
+      })
+      .then(newOrder => this.setState({ orders: [...this.state.orders, newOrder] }))
+      .catch(error => console.log(error))
+  }
+
+  deletePurchase = id => {
+    let filteredOrders = this.state.orders.filter(order => order.id !== id)
+    this.setState({ orders: filteredOrders })
+    const options = {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+    fetch(`http://localhost:3001/api/v1/purchases/${id}`, options)
   }
 
   render() {
@@ -33,7 +61,7 @@ class App extends Component {
           <h1 className='app-title'>My Order History Test</h1>
           <Form addPurchase={this.addPurchase}/>
         </header>
-        <Container orders={orders}/>
+        <Container orders={orders} deletePurchase={this.deletePurchase}/>
       </main>
     );
   }

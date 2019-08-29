@@ -1,7 +1,7 @@
 import React from 'react';
 import './Order.css';
 
-const Order = ({ id, name, description, price, img }) => {
+const Order = ({ id, name, description, price, img, deletePurchase }) => {
 
   return (
     <section className="Order_section">
@@ -12,7 +12,7 @@ const Order = ({ id, name, description, price, img }) => {
       </div>
       <div>
         <h3>{price}</h3>
-        <button>Remove from History</button>
+        <button onClick={() => deletePurchase(id)}>Remove from History</button>
       </div>
     </section>
   )
