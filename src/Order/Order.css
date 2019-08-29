@@ -1,7 +1,6 @@
 .Order_section {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   background-color: #FFF;
   margin: 40px 10%;
   box-shadow: 0 0 10px #000000;

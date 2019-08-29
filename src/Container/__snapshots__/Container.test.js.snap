@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container should keep an up-to-date snapshot of Container 1`] = `
+<section
+  className="Container_section"
+>
+  <Order
+    deletePurchase={[MockFunction]}
+    description="It's the new iPhone 18"
+    id={1}
+    img="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-xs-max-gold-select-2018?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1550795409154"
+    key="1"
+    name="iPhone"
+    price={800}
+  />
+</section>
+`;
