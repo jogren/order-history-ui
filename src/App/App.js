@@ -11,7 +11,6 @@ class App extends Component {
       orders: [],
       error: ''
     }
-
   }
 
   componentDidMount() {
@@ -20,15 +19,19 @@ class App extends Component {
       .catch(error => this.setState({ error: 'There was a problem fetching your data.' }))
   }
 
+  addPurchase = (e, formState) => {
+    e.preventDefault();
+    this.setState({ orders: [...this.state.orders, formState] })
+  }
+
   render() {
     const { orders, error } = this.state;
+    console.log(orders)
     return (
       <main className="App">
         <header>
           <h1 className='app-title'>My Order History Test</h1>
-          <div className='purchase-form'>
-            <Form />
-          </div>
+          <Form addPurchase={this.addPurchase}/>
         </header>
         <Container orders={orders}/>
       </main>
