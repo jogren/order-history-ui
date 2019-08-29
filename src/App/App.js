@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1 className='app-title'>My Order History</h1>
+          <h1 className='app-title'>My Order History Test</h1>
           <div className='purchase-form'>
 
           </div>
