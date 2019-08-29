@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Container from '../Container/Container';
 import './App.css';
 
 class App extends Component {
@@ -20,20 +21,16 @@ class App extends Component {
 
   render() {
     const { orders, error } = this.state;
-    console.log(orders)
-    console.log(error)
     return (
-      <div className="App">
+      <main className="App">
         <header>
           <h1 className='app-title'>My Order History Test</h1>
           <div className='purchase-form'>
 
           </div>
         </header>
-        <div className='purchase-container'>
-
-        </div>
-      </div>
+        <Container orders={orders}/>
+      </main>
     );
   }
 }

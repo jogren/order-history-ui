@@ -1,0 +1,11 @@
+.Order_section {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  margin: 40px 20%;;
+}
+
+img {
+  height: 70px;
+  width: 90px;
+}

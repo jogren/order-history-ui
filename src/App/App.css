@@ -1,4 +1,6 @@
 .App {
+  display: grid;
+  grid-template-rows: 1fr 3fr;
   text-align: center;
 }
 
@@ -9,26 +11,25 @@ header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-  height: 300px;
 }
 
 h1 {
   font-size: 72px;
 }
 
-.purchase-form {
+/* .purchase-form {
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
   width: 50%;
-}
+} */
 
-.purchase-container {
+/* .purchase-container {
   height: 700px;
   background:#CECECE;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
