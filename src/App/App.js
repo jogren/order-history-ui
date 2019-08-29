@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Container from '../Container/Container';
+import Form from '../Form/Form';
+import { getOrders } from '../apiCalls/apiCalls';
 import './App.css';
 
 class App extends Component {
@@ -13,8 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/api/v1/purchases')
-      .then(res => res.json())
+    getOrders()
       .then(data => this.setState({ orders: data }))
       .catch(error => this.setState({ error: 'There was a problem fetching your data.' }))
   }
@@ -26,7 +27,7 @@ class App extends Component {
         <header>
           <h1 className='app-title'>My Order History Test</h1>
           <div className='purchase-form'>
-
+            <Form />
           </div>
         </header>
         <Container orders={orders}/>
