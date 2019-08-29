@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Container from '../Container/Container';
 import Form from '../Form/Form';
-import { getOrders } from '../apiCalls/apiCalls';
+import { getOrders, postOrder, deleteOrder } from '../apiCalls/apiCalls';
 import './App.css';
 
 class App extends Component {
@@ -21,21 +21,7 @@ class App extends Component {
 
   addPurchase = (e, formState) => {
     e.preventDefault();
-
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(formState),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    fetch('http://localhost:3001/api/v1/purchases', options)
-      .then(res => {
-        if(!res.ok) {
-          throw Error('Error posting order')
-        }
-        return res.json()
-      })
+    postOrder(formState)
       .then(newOrder => this.setState({ orders: [...this.state.orders, newOrder] }))
       .catch(error => console.log(error))
   }
@@ -43,13 +29,7 @@ class App extends Component {
   deletePurchase = id => {
     let filteredOrders = this.state.orders.filter(order => order.id !== id)
     this.setState({ orders: filteredOrders })
-    const options = {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
-    fetch(`http://localhost:3001/api/v1/purchases/${id}`, options)
+    deleteOrder(id);
   }
 
   render() {
